@@ -79,6 +79,7 @@ for i in fr.readlines():
             'w': _int64_feature(shape[1]),
             'c': _int64_feature(shape[2]),
             'image_raw': _bytes_feature(img_raw),
+            'name': _bytes_feature(str.encode(item[0])),
             'label': _int64_feature(label)}))
     
         writer.write(example.SerializeToString())
